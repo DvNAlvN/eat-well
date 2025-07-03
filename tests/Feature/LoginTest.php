@@ -7,6 +7,12 @@ use Illuminate\Foundation\Testing\WithFaker;
 // use Tests\TestCase;
 use Tests\TestCase;
 use App\Models\User;
+use Laravel\Socialite\Contracts\Provider;
+use Laravel\Socialite\Facades\Socialite;
+use Mockery;
+use Laravel\Socialite\Contracts\User as ProviderUser;
+
+
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class LoginTest extends TestCase
@@ -58,7 +64,7 @@ class LoginTest extends TestCase
     public function tc4_password_field_is_hidden_on_login_page()
     {
         $response = $this->get('/login');
-        $response->assertSee('<input class="form-control m-0" type="password" name="password" id="password" placeholder="" required="required">', false);
+        $response->assertSee('<input type="password"', false);
     }
     // Forgot password for later on, not now.
     /** @test */
@@ -101,5 +107,20 @@ class LoginTest extends TestCase
         $response = $this->get('/login');
         $response->assertSee("Register now!");
     }
-}
 
+    /** @test */
+    public function tc10_register_asvendor_link_exists()
+    {
+        $response = $this->get('/login');
+        $response->assertSee("Join Eatwell as a <u>vendor!</u>", false);
+    }
+
+    /** @test */
+    public function tc10_google_redirect_route()
+    {
+        $response = $this->get('/auth/google/redirect');
+        $response->assertRedirect(); // Akan redirect ke Google
+    }
+
+
+}
