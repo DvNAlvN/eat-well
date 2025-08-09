@@ -35,15 +35,14 @@ class CardVendor extends Component
         if ($vendor->dinner_delivery ?? false) {
             $this->deliverySlots[] = 'dinner';
         }
-
-        $user_adr_id = session('address_id');
-        $user_province = Address::find($user_adr_id)?->provinsi;
-        
-        $this->tooFar = $vendor->provinsi === $user_province ? 0 : 1;
     }
 
     public function render()
     {
+        $user_adr_id = session('address_id');
+        $user_province = Address::find($user_adr_id)?->provinsi;
+        
+        $this->tooFar = $this->vendor->provinsi === $user_province ? 0 : 1;
         return view('components.card-vendor');
     }
 }
