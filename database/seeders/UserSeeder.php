@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
         ]);
 
         User::factory()->create([
-            'email' => "customer1@gmail.com",
+            'email' => "eatwell517@gmail.com",
             'password' => Hash::make('password'),
             'role' => 'Customer',
         ]);

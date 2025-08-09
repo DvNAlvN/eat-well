@@ -108,7 +108,7 @@
                         <div class="carousel-inner">
                             @foreach ($vendor->previews as $key => $preview)
                                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                    <img src="{{ asset('asset/catering-preview/' . $preview->previewPicturePath) }}"
+                                    <img src="{{ asset( $preview->previewPicturePath) }}"
                                         class="d-block w-100" alt="Food Preview {{ $key + 1 }}">
                                 </div>
                             @endforeach
