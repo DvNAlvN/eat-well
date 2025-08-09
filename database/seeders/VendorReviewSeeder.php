@@ -20,7 +20,7 @@ class VendorReviewSeeder extends Seeder
 
         foreach ($vendors as $vendor) {
             // Pastikan setiap vendor memiliki setidaknya 3 review
-            for ($i = 0; $i < 3; $i++) {
+            for ($i = 0; $i < 2; $i++) {
                 // Cari order yang terkait dengan vendor ini. Review hanya bisa diberikan jika ada order yang selesai.
                 $order = $this->getAllFinishedOrderForSpecificVendor($vendor->vendorId);
 

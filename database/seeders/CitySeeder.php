@@ -43,7 +43,7 @@ class CitySeeder extends Seeder
                 
                 $cities = $cities->json('value');
                 // Command line berikut untuk menggenerate semua kota/kabupaten yang ada
-                $cities = array_slice($cities, 0, 5);
+                $cities = array_slice($cities, 0, 7);
 
                 foreach($cities as $city)
                 {

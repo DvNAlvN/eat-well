@@ -21,7 +21,7 @@
 @section('content')
     <main class="">
         {{-- Carousel/Image --}}
-        <img src="{{ asset('asset/customer/home/iklan 1.jpg') }}" class="img-fluid" alt="..."
+        <img src="{{ asset('asset/customer/home/iklan 4.jpg') }}" class="img-fluid" alt="..."
             style="width: 100%; max-height: 350px; object-fit: cover;">
         <main class="container pt-3 pb-3 lexend">
             <h3 class="mt-2 mb-3">{{ __('customer/home.wellpay_message') }}</h3>
